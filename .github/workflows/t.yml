@@ -16,4 +16,5 @@ jobs:
 
           # Start an SSHX session and keep it open
           echo "Starting SSHX session... (open the link below)"
-          sshx --wait
+          sshx -h
+          sshx
