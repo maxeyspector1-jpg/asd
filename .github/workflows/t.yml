@@ -6,9 +6,14 @@ on:
 jobs:
   secure-rdp:
     runs-on: ubuntu-latest
-    timeout-minutes: 3600
+    timeout-minutes: 3600  # Keeps the runner alive for up to 1 hour
 
     steps:
-      - name: Start SSH session (via sshx.io)
+      - name: Start SSHX session
         run: |
+          # Install SSHX
           curl -sSf https://sshx.io/get | sh
+
+          # Start an SSHX session and keep it open
+          echo "Starting SSHX session... (open the link below)"
+          sshx --wait
